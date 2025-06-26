@@ -1,11 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Kalkulator Segitiga</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <header>
+        <h1>Kalkulator Segitiga</h1>
+        <p>Web untuk menghitung luas dan keliling segitiga.</p>
+    </header>
+
+    <main>
+        <div class="calculator-container">
+            <div class="tabs">
+                <button class="tab-link active" onclick="openCalc('luas')">Hitung Luas</button>
+                <button class="tab-link" onclick="openCalc('keliling')">Hitung Keliling</button>
+            </div>
+
+            <!-- Kalkulator Luas Segitiga -->
+            <div id="luas" class="calculator-content active">
+                <h2>Luas Segitiga</h2>
+                <div class="image-placeholder">
+                    <img src="https://cdn.grid.id/crop/0x0:0x0/700x0/photo/2021/01/15/3991804788.jpg" alt="Ilustrasi Rumus Luas Segitiga" onerror="this.onerror=null;this.src='https://placehold.co/300x200/e0e0e0/333?text=Gagal+memuat+gambar';">
+                </div>
+                <p class="formula">Rumus Luas: <strong>L = 1/2 x a x t</strong></p>
+                <form id="luas-form">
+                    <div class="input-group">
+                        <label for="alas">Alas (a)</label>
+                        <input type="number" id="alas" placeholder="Masukkan nilai alas" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="tinggi">Tinggi (t)</label>
+                        <input type="number" id="tinggi" placeholder="Masukkan nilai tinggi" required>
+                    </div>
+                    <div class="button-group">
+                        <button type="submit" class="calculate-btn">Hitung</button>
+                        <button type="reset" class="reset-btn">Reset</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Kalkulator Keliling Segitiga -->
+            <div id="keliling" class="calculator-content">
+                <h2>Keliling Segitiga</h2>
+                <div class="image-placeholder">
+                     <img src="https://cdn.grid.id/crop/0x0:0x0/700x0/photo/2021/01/15/1853786887.jpg" alt="Ilustrasi Rumus Keliling Segitiga" onerror="this.onerror=null;this.src='https://placehold.co/300x200/e0e0e0/333?text=Gagal+memuat+gambar';">
+                </div>
+                <p class="formula">Rumus Keliling: <strong>K = S1 + S2 + S3</strong></p>
+                <form id="keliling-form">
+                    <div class="input-group">
+                        <label for="sisi1">Sisi 1 (S1)</label>
+                        <input type="number" id="sisi1" placeholder="Masukkan nilai sisi 1" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="sisi2">Sisi 2 (S2)</label>
+                        <input type="number" id="sisi2" placeholder="Masukkan nilai sisi 2" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="sisi3">Sisi 3 (S3)</label>
+                        <input type="number" id="sisi3" placeholder="Masukkan nilai sisi 3" required>
+                    </div>
+                     <div class="button-group">
+                        <button type="submit" class="calculate-btn">Hitung</button>
+                        <button type="reset" class="reset-btn">Reset</button>
+                    </div>
+                </form>
+            </div>
+
+            <div id="result-area" class="result-area" style="display: none;">
+                <h3>Hasil Perhitungan:</h3>
+                <div id="result-display"></div>
+            </div>
+
+        </div>
+    </main>
     
+    <script src="js/script.js"></script>
 </body>
 </html>
